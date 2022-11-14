@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app = document.querySelector('#app');
+        const products = [
+            {title: 'Burger', price: 80},
+            {title: 'Pizza', price: 40},
+            {title: 'Soda', price: 10},
+        ];
+
+        const newProducts = products.map(item => {
+            return `<li>${item.title} - $ ${item.price * 2}</li>`; //transforming each element price with map, therefore returning a new array with prices doubled. ALWAYS return an element with map method
+        })
+        app.innerHTML += newProducts.join(''); //if we add the array raw, it will display with commas between elements, because is the default separator, if we put '', will display without them
+    </script>
+</body>
+</html>
