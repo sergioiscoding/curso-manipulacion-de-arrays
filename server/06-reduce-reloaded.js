@@ -5,6 +5,7 @@ const numbers = [3, 5, 2, 1, 4, 5, 5, 3, 4, 2, 2, 1];
 const rta = numbers.reduce( (obj, item) => {
     if(!obj[item]){
         obj[item] = 1;
+        console.log(obj[item])
     } else {
         obj[item] = obj[item] + 1;
     }
