@@ -3,7 +3,9 @@
 const elements = [1, 1, 2, 2];
 const otherElements = [3, 3, 4, 4];
  
-const newArray = [...elements]; //this way we are making up a reference in memory. Like so, mutating orinal array "elements" 
+// const newArray = [...elements]; //this way we are making up a reference in memory. Like so, mutating orinal array "elements" 
+
+const newArray = [...elements]; //with spread operator there's no second memory reference
 
 for (let i = 0; i < otherElements.length; i++) {
     const element = otherElements[i];
@@ -34,13 +36,22 @@ console.log('concat', rta)
 //   ]
 
 //examples:
+let rta2 = [];
 
-const rta2 = [...elements, ...otherElements];
+rta2 =  rta2.concat(elements, otherElements); //another form to use concat
+console.log('concat v.2', rta2)
+// concat v.2 [
+//     1, 1, 2, 2,
+//     3, 3, 4, 4
+//   ]
+
+let rta02 = [...elements, ...otherElements];
 console.log('...', rta2)
 // ... [
 //     1, 1, 2, 2,
 //     3, 3, 4, 4
 //   ]
+
 
 const rta3 = [...elements, 'random'];
 console.log('... + string', rta3);
@@ -67,4 +78,4 @@ console.log(elements)
 
 //copy an array of objects:
 
-const rta5 = objArray.map( a => ({...a})) //({}) is object copy syntax
+// const rta5 = objArray.map( a => ({...a})) //({}) is object copy syntax
